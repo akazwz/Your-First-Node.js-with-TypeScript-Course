@@ -3358,6 +3358,7 @@ ESM ⚡️ Build success in 330ms
 <li>VSCode还支持各种版本控制系统，如Git，使得团队协作更加便捷。开发者可以直接在VSCode中进行代码提交、拉取和合并等操作，而无需切换到其他工具。</li>
 </ol>
 <p>另外，VSCode还具有丰富的扩展生态系统。开发者可以通过安装各种插件来扩展VSCode的功能，满足个人化的开发需求。例如，可以安装代码格式化插件、代码片段插件、主题插件等，以提高开发效率和舒适度。</p>
+<p>在4.1章节中也讲了一点Cursor，这里就不赘述了。</p>
 <aside>
 💡 目前VSCode已经是主流编辑器，在前端开发者覆盖率更是90%以上。它不挑机器，性能足够，虽然是基于electron打包的，插件生态丰富，当然能不装尽量少装，它也是会出现卡顿的。VSCode不卡，免费，前端尤其友好，是开发者非常好用的编辑器。
 </aside>
@@ -3371,10 +3372,16 @@ ESM ⚡️ Build success in 330ms
 <div style="break-before: page; page-break-before: always;"></div><h1 id="vscode必杀技"><a class="header" href="#vscode必杀技">VSCode必杀技</a></h1>
 <p>首先，我们要承认开发是效率差别的，使用VSCode也是，下面列举几个我认为的提效技巧。</p>
 <ol>
+<li>使用Warp终端</li>
 <li>使用code命令</li>
 <li>配置快捷键</li>
 <li>使用插件</li>
+<li>更好的编辑器Cursor</li>
 </ol>
+<h2 id="使用warp终端"><a class="header" href="#使用warp终端">使用Warp终端</a></h2>
+<p>Warp 是一个非常强大的终端，它不仅支持多标签，还支持插件，比如我常用的 <code>git</code> 插件，可以非常方便的查看 git 提交记录，并且支持模糊搜索。</p>
+<p><img src="4/img/warp.png" alt="alt text" /></p>
+<p>通常免费的功能就已经非常好用了。</p>
 <h2 id="code命令"><a class="header" href="#code命令">Code命令</a></h2>
 <p><img src="4/img/Untitled.png" alt="Untitled" /></p>
 <p>然后在终端中就可以使用了。</p>
@@ -3404,6 +3411,17 @@ ESM ⚡️ Build success in 330ms
 <li>nodejs-testing</li>
 <li>wayou.vscode-todo-highlight</li>
 </ul>
+<h2 id="更好的编辑器cursor"><a class="header" href="#更好的编辑器cursor">更好的编辑器Cursor</a></h2>
+<p>Cursor 是一个非常强大的 AI 编程工具，它可以帮助你快速生成代码，并且支持多种编程语言。</p>
+<p><img src="4/img/cursor.png" alt="alt text" /></p>
+<p>目前我的绝大部分开发都移到Cursor上，使用的是pro方案。</p>
+<p>Cursor是基于VSCode改的，所以上面的插件依然使用，并且也可以在终端里安装cursor命令。</p>
+<p>常用功能</p>
+<ul>
+<li>CMD + K 快速生成代码</li>
+<li>CMD + L 打开聊天窗口，composer和bug finder</li>
+</ul>
+<p>其他参照VSCode即可。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="nodejs调试"><a class="header" href="#nodejs调试">Node.js调试</a></h1>
 <h2 id="nodejs的调试发展历史"><a class="header" href="#nodejs的调试发展历史">Node.js的调试发展历史</a></h2>
 <p>在Node.js的调试发展历史中，调试协议也经历了一些变化。以下是一些主要的调试协议变化和相关工具的举例说明：</p>
@@ -4754,7 +4772,7 @@ packages/
 <aside>
 💡 在前端开发中，脚手架是一个用于快速搭建项目结构和提供初始配置的工具。它可以帮助开发者快速创建项目，并集成了一些常用的工具、库和最佳实践。
 </aside>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="行业真知"><a class="header" href="#行业真知">行业真知</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="开源最佳实践"><a class="header" href="#开源最佳实践">开源最佳实践</a></h1>
 <p>在 https://github.com/npmstudy/your-node-v20-menoreopo-project 里，我们用到的技术栈如下。</p>
 <pre><code class="language-markdown">- [Tsup](https://tsup.egoist.dev/) as a TypeScript universal package.
 - [Tsx](https://github.com/esbuild-kit/tsx) as a Node.js enhanced with esbuild to run TypeScript &amp; ESM
