@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="light sidebar-visible" dir="ltr">
+<html lang="en" class="light" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -7,7 +7,7 @@
 
 
         <!-- Custom HTML head -->
-
+        
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
@@ -31,17 +31,15 @@
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="../custom.css">
 
-
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
-        <!-- Start loading toc.js asap -->
-        <script src="../toc.js"></script>
-    </head>
-    <body>
-    <div id="body-container">
+
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -63,16 +61,19 @@
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
-            const html = document.documentElement;
+            var html = document.querySelector('html');
             html.classList.remove('light')
             html.classList.add(theme);
-            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
         </script>
 
         <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
+            var body = document.querySelector('body');
             var sidebar = null;
             var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
@@ -82,25 +83,45 @@
                 sidebar = 'hidden';
             }
             sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <!-- populated by js -->
-            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
-            <noscript>
-                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
-            </noscript>
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../preface.html">前言</a></li><li class="chapter-item expanded "><a href="../1/1.html"><strong aria-hidden="true">1.</strong> Hello Node.js v20</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../1/1.1.html"><strong aria-hidden="true">1.1.</strong> Node.js v20</a></li><li class="chapter-item expanded "><a href="../1/1.2.html"><strong aria-hidden="true">1.2.</strong> Node.js安装</a></li><li class="chapter-item expanded "><a href="../1/1.3.html"><strong aria-hidden="true">1.3.</strong> Node.js模块</a></li><li class="chapter-item expanded "><a href="../1/1.4.html"><strong aria-hidden="true">1.4.</strong> 第一个Node.js v20项目</a></li><li class="chapter-item expanded "><a href="../1/1.5.html"><strong aria-hidden="true">1.5.</strong> 本章小结</a></li></ol></li><li class="chapter-item expanded "><a href="../2/2.html"><strong aria-hidden="true">2.</strong> Hello TypeScript</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../2/2.1.html"><strong aria-hidden="true">2.1.</strong> TypeScript是什么</a></li><li class="chapter-item expanded "><a href="../2/2.2.html"><strong aria-hidden="true">2.2.</strong> TypeScript安装</a></li><li class="chapter-item expanded "><a href="../2/2.3.html"><strong aria-hidden="true">2.3.</strong> TypeScript基础</a></li><li class="chapter-item expanded "><a href="../2/2.4.html"><strong aria-hidden="true">2.4.</strong> TypeScript进阶</a></li><li class="chapter-item expanded "><a href="../2/2.5.html"><strong aria-hidden="true">2.5.</strong> 本章小结</a></li></ol></li><li class="chapter-item expanded "><a href="../3/3.html"><strong aria-hidden="true">3.</strong> 你的第一个TS编写的Node.js项目</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../3/3.1.html"><strong aria-hidden="true">3.1.</strong> 项目实战</a></li><li class="chapter-item expanded "><a href="../3/3.2.html"><strong aria-hidden="true">3.2.</strong> Tsx编译</a></li><li class="chapter-item expanded "><a href="../3/3.3.html"><strong aria-hidden="true">3.3.</strong> TSDoc文档</a></li><li class="chapter-item expanded "><a href="../3/3.4.html"><strong aria-hidden="true">3.4.</strong> Tsup发布</a></li><li class="chapter-item expanded "><a href="../3/3.5.html"><strong aria-hidden="true">3.5.</strong> 本章小结</a></li></ol></li><li class="chapter-item expanded "><a href="../4/4.html"><strong aria-hidden="true">4.</strong> 用VSCode调试项目</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../4/4.1.html"><strong aria-hidden="true">4.1.</strong> VSCode+Cursor必杀技</a></li><li class="chapter-item expanded "><a href="../4/4.2.html"><strong aria-hidden="true">4.2.</strong> Node.js调试</a></li><li class="chapter-item expanded "><a href="../4/4.3.html"><strong aria-hidden="true">4.3.</strong> TS+Node.js调试</a></li><li class="chapter-item expanded "><a href="../4/4.4.html"><strong aria-hidden="true">4.4.</strong> 本章小结</a></li></ol></li><li class="chapter-item expanded "><a href="../5/5.html"><strong aria-hidden="true">5.</strong> 给Node.js项目增加TS测试</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../5/5.1.html" class="active"><strong aria-hidden="true">5.1.</strong> 增加TS测试</a></li><li class="chapter-item expanded "><a href="../5/5.2.html"><strong aria-hidden="true">5.2.</strong> 常用测试技巧进阶</a></li><li class="chapter-item expanded "><a href="../5/5.3.html"><strong aria-hidden="true">5.3.</strong> 学会CI/CD</a></li><li class="chapter-item expanded "><a href="../5/5.4.html"><strong aria-hidden="true">5.4.</strong> 本章小结</a></li></ol></li><li class="chapter-item expanded "><a href="../6/6.html"><strong aria-hidden="true">6.</strong> Menorepo多模块开发实践</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../6/6.1.html"><strong aria-hidden="true">6.1.</strong> 开发你的第一个模块</a></li><li class="chapter-item expanded "><a href="../6/6.2.html"><strong aria-hidden="true">6.2.</strong> 开源最佳实践</a></li><li class="chapter-item expanded "><a href="../6/6.3.html"><strong aria-hidden="true">6.3.</strong> 如何学习</a></li><li class="chapter-item expanded "><a href="../6/6.4.html"><strong aria-hidden="true">6.4.</strong> 本章小结</a></li></ol></li><li class="chapter-item expanded "><a href="../7/7.html"><strong aria-hidden="true">7.</strong> 使用Hono做Web开发</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../7/7.1.html"><strong aria-hidden="true">7.1.</strong> Hono框架</a></li><li class="chapter-item expanded "><a href="../7/7.2.html"><strong aria-hidden="true">7.2.</strong> 使用ORpc + Scalar做API开发</a></li><li class="chapter-item expanded "><a href="../7/7.3.html"><strong aria-hidden="true">7.3.</strong> 使用Cella开发Web应用</a></li><li class="chapter-item expanded "><a href="../7/7.4.html"><strong aria-hidden="true">7.4.</strong> 监控Apitally</a></li><li class="chapter-item expanded "><a href="../7/7.5.html"><strong aria-hidden="true">7.5.</strong> 本章小结</a></li></ol></li><li class="chapter-item expanded "><a href="../appendix.html"><strong aria-hidden="true">8.</strong> 附录</a></li></ol>
+            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
+                                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
                         <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -171,7 +192,7 @@
 <tr><td>jest</td><td>v27</td><td>7</td></tr>
 </tbody></table>
 </div>
-<p>Node.js遵循与JavaScript本身相同的"最小核心"原则。因此，像代码检查工具、代码格式化工具和测试运行器这样的工具最好作为第三方工具提供。虽然这是一个很好的想法很长一段时间，但现在没有标准测试工具的任何语言都显得有些奇怪。Deno、Rust和Go - 它们都有自己内置的测试运行器。</p>
+<p>Node.js遵循与JavaScript本身相同的&quot;最小核心&quot;原则。因此，像代码检查工具、代码格式化工具和测试运行器这样的工具最好作为第三方工具提供。虽然这是一个很好的想法很长一段时间，但现在没有标准测试工具的任何语言都显得有些奇怪。Deno、Rust和Go - 它们都有自己内置的测试运行器。</p>
 <p>目前各个测试框架和Node.js内置测试框架差异对比如下，参考自<a href="https://glebbahmutov.com/blog/trying-node-test-runner/">https://glebbahmutov.com/blog/trying-node-test-runner/</a>。</p>
 <div class="table-wrapper"><table><thead><tr><th>特性</th><th><strong>Mocha</strong></th><th><strong>Ava</strong></th><th><strong>Jest</strong></th><th><strong>Node.js TR</strong></th><th>推荐</th></tr></thead><tbody>
 <tr><td>内置在Node中</td><td>🚫</td><td>🚫</td><td>🚫</td><td>✅</td><td>🎉</td></tr>
@@ -191,10 +212,10 @@
 <pre><code class="language-bash">import {test, describe} from 'node:test';
 import assert from 'node:assert';
 
-import { HelloWorld } from "./helloworld.mjs";
+import { HelloWorld } from &quot;./helloworld.mjs&quot;;
 
-describe("test suite", function() {
- test("test if works correctly", function() {
+describe(&quot;test suite&quot;, function() {
+ test(&quot;test if works correctly&quot;, function() {
    // run some test
    assert.strictEqual(1, 1);
  })
@@ -213,14 +234,14 @@ describe("test suite", function() {
 <h2 id="使用tsd类型测试"><a class="header" href="#使用tsd类型测试">使用Tsd类型测试</a></h2>
 <p>写了类型，最好写好类型测试，在ts生态里，可以使用tsd来做类型测试。</p>
 <p>创建index.test-d.ts文件</p>
-<pre><code class="language-bash">import { expectType } from "tsd";
+<pre><code class="language-bash">import { expectType } from &quot;tsd&quot;;
 
-import { IPerson } from ".";
-import { HelloWorld } from "./src/helloworld";
+import { IPerson } from &quot;.&quot;;
+import { HelloWorld } from &quot;./src/helloworld&quot;;
 
 const cli: IPerson = new HelloWorld();
 
-expectType&lt;Promise&lt;void&gt;&gt;(cli.sayHi("use TypeScript to write Node.js"));
+expectType&lt;Promise&lt;void&gt;&gt;(cli.sayHi(&quot;use TypeScript to write Node.js&quot;));
 </code></pre>
 <p>执行</p>
 <pre><code class="language-bash">$ npx tsd
@@ -235,33 +256,33 @@ expectType&lt;Promise&lt;void&gt;&gt;(cli.sayHi("use TypeScript to write Node.js
 <p>如果想规范的写，就会比较麻烦一点。如果什么都不写，也没啥问题，只是不标准而已。像Rails这种追求极致效率，又想标准的项目，不用ts是正常的。</p>
 <h2 id="添加ts测试"><a class="header" href="#添加ts测试">添加TS测试</a></h2>
 <p>这样的描述被称作 <strong>规范（specification, spec）</strong>，包含用例的描述以及针对它们的测试，如下所示：</p>
-<pre><code class="language-bash">import { it, describe } from "node:test";
-import assert from "node:assert";
+<pre><code class="language-bash">import { it, describe } from &quot;node:test&quot;;
+import assert from &quot;node:assert&quot;;
 
-import { HelloWorld } from "../src/helloworld";
-import { IPerson } from "..";
+import { HelloWorld } from &quot;../src/helloworld&quot;;
+import { IPerson } from &quot;..&quot;;
 
-describe("test suite", function () {
-  it("test if works correctly", async function (t) {
-    const log = t.mock.method(global.console, "log");
+describe(&quot;test suite&quot;, function () {
+  it(&quot;test if works correctly&quot;, async function (t) {
+    const log = t.mock.method(global.console, &quot;log&quot;);
 
     assert.strictEqual(log.mock.callCount(), 0);
     // call hello world say method
     const cli: IPerson = new HelloWorld();
-    await cli.sayHi("liangqi");
+    await cli.sayHi(&quot;liangqi&quot;);
 
     assert.strictEqual(log.mock.callCount(), 1);
   });
 
-  it("test if works incorrectly", async function () {
+  it(&quot;test if works incorrectly&quot;, async function () {
     const cli: IPerson = new HelloWorld();
-    assert.rejects(async () =&gt; await cli.sayHi(), new Error("fail"));
+    assert.rejects(async () =&gt; await cli.sayHi(), new Error(&quot;fail&quot;));
   });
 });
 </code></pre>
 <p>正如你所看到的，一个规范包含三个主要的模块：</p>
-<p>1、**<code>describe("title", function() { ... })</code>**表示我们正在描述的功能是什么，相当于一个group。用于组织“工人（workers）” —— <code>it</code> 代码块。</p>
-<p>2、**<code>it("use case description", function() { ... })**it</code> 里面的描述部分，我们以一种 <strong>易于理解</strong> 的方式描述特定的用例，第二个参数是用于对其进行测试的函数。表示这是"一系列测试"中的一项，相当于item，如何测试？测试逻辑？都是在it的回调函数中实现的</p>
+<p>1、**<code>describe(&quot;title&quot;, function() { ... })</code>**表示我们正在描述的功能是什么，相当于一个group。用于组织“工人（workers）” —— <code>it</code> 代码块。</p>
+<p>2、**<code>it(&quot;use case description&quot;, function() { ... })**it</code> 里面的描述部分，我们以一种 <strong>易于理解</strong> 的方式描述特定的用例，第二个参数是用于对其进行测试的函数。表示这是&quot;一系列测试&quot;中的一项，相当于item，如何测试？测试逻辑？都是在it的回调函数中实现的</p>
 <p>3、**<code>assert.equal(value1, value2)**it</code> 块中的代码，如果实现是正确的，它应该在执行的时候不产生任何错误。
 <code>assert.*</code> 函数用于检查 测试 函数是否按照预期工作。在这里我们使用了其中之一 —— <code>assert.equal</code>，它会对参数进行比较，如果它们不相等则会抛出一个错误。这里它检查了 <code>pow(2, 3)</code> 的值是否等于 <code>8</code>。还有其他类型的比较和检查，我们将在后面介绍到。</p>
 <p>规范可以被执行，它将运行在 <code>it</code> 块中指定的测试。我们稍后会看到。</p>
